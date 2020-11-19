@@ -4,7 +4,7 @@ import createMediaInfo from '../utils/createMediaInfo'
 
 describe('chromecast/hooks/useMediaLoader', () => {
   const mockMediaInfo = createMediaInfo({ contentId: 'put.io', duration: 100 })
-  const session = window.cast.framework.CastContext.getInstance().getCurrentSession()
+  const session = window.cast.framework.CastContext.getInstance().getCurrentSession() as cast.framework.CastSession
   const mockLoadMedia = session.loadMedia as jest.Mock
 
   afterEach(jest.clearAllMocks)

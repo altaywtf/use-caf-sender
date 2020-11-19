@@ -1,10 +1,9 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
 import styled from '@emotion/styled'
 import ReactSlider from 'react-slider'
 import { Box, Flex, Text } from 'rebass'
 import formatDuration from '../../utils/formatDuration'
 import { ChromecastPlayerTheme } from '../../theme'
-import { useCallback } from '@storybook/addons'
 
 export type Props = {
   theme: ChromecastPlayerTheme['slider']
@@ -88,9 +87,12 @@ const ChromecastPlayerSlider: React.FC<Props> = ({
 }) => {
   const renderThumb = useMemo(() => createThumbRenderer(theme), [theme])
   const renderTrack = useMemo(() => createTrackRenderer(theme), [theme])
-  const onAfterChange = useCallback((value: unknown) => {
-    if (typeof value === 'number') onSeek(value)
-  }, [onSeek])
+  const onAfterChange = useCallback(
+    (value: unknown) => {
+      if (typeof value === 'number') onSeek(value)
+    },
+    [onSeek],
+  )
 
   return (
     <>

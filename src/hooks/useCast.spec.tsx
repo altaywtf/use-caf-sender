@@ -14,7 +14,9 @@ describe('chromecast/hooks/useCast', () => {
 
   afterEach(jest.clearAllMocks)
 
-  const wrapper = ({ children }) => <CastProvider>{children}</CastProvider>
+  const wrapper: React.FC = ({ children }) => (
+    <CastProvider>{children}</CastProvider>
+  )
 
   it('updates availability after loadCastFramework rejects', async () => {
     const mockLoadCastFramework = loadCastFramework as jest.Mock
@@ -140,14 +142,30 @@ describe('chromecast/hooks/useCast', () => {
 
   it('calls window.cast.framework.CastContext.getInstance().requestSession', async () => {
     const { result } = renderHook(() => useCast(), { wrapper })
-    await act(() => result.current.requestSession())
+
+    await act(
+      () =>
+        new Promise(async resolve => {
+          await result.current.requestSession()
+          resolve()
+        }),
+    )
+
     expect(mockRequestSession).toBeCalled()
   })
 
   it('handles window.cast.framework.CastContext.getInstance().requestSession rejections', async () => {
     mockRequestSession.mockRejectedValue(new Error('Error!'))
     const { result } = renderHook(() => useCast(), { wrapper })
-    await act(() => result.current.requestSession())
+
+    await act(
+      () =>
+        new Promise(async resolve => {
+          await result.current.requestSession()
+          resolve()
+        }),
+    )
+
     expect(mockRequestSession).toBeCalled()
   })
 

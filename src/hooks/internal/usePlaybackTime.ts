@@ -7,7 +7,7 @@ const usePlaybackTime = (playerState: chrome.cast.media.PlayerState) => {
 
   useInterval(
     () => {
-      setCurrentTime((t) => t + 1)
+      setCurrentTime(t => t + 1)
     },
     isPlaying ? 1000 : null,
   )

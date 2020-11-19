@@ -62,7 +62,7 @@ const SubtitleStylerItem: React.FC<SubtitleStylerItemProps> = ({
             },
           }}
         >
-          {options.map((o) => (
+          {options.map(o => (
             <option key={o.value} value={o.value}>
               {o.label}
             </option>
@@ -84,7 +84,7 @@ const SubtitleStyler: React.FC<Props> = ({ theme, styles, setStyle }) => {
 
   return (
     <div>
-      {schema.map((i) => (
+      {schema.map(i => (
         <SubtitleStylerItem
           key={i.keyPath}
           keyPath={i.keyPath}

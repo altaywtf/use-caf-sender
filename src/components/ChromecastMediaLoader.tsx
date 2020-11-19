@@ -56,7 +56,7 @@ const createMediaInfoFromProps = (
   return mediaInfo
 }
 
-const ChromecastMediaLoader: React.FC<Props> = (props) => {
+const ChromecastMediaLoader: React.FC<Props> = props => {
   const [mediaId, setMediaId] = useState<number>()
   const [media, loadMedia] = useMediaLoader()
 

@@ -1,4 +1,4 @@
-import formatDuration from './formatDuration';
+import formatDuration from './formatDuration'
 
 describe('utils/formatDuration', () => {
   it('works', () => {
@@ -23,12 +23,12 @@ describe('utils/formatDuration', () => {
         input: 14532,
         output: '4:02:12',
       },
-    ];
+    ]
 
-    cases.forEach(c => expect(formatDuration(c.input)).toEqual(c.output));
-  });
+    cases.forEach(c => expect(formatDuration(c.input)).toEqual(c.output))
+  })
 
   it('handles weird inputs', () => {
-    expect(formatDuration(104.188)).toEqual('01:44');
-  });
-});
+    expect(formatDuration(104.188)).toEqual('01:44')
+  })
+})

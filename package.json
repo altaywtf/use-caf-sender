@@ -29,12 +29,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
+  "prettier": "@putdotio/prettier-config",
   "name": "use-caf-sender",
   "author": "Altay Aydemir",
   "module": "dist/use-caf-sender.esm.js",
@@ -50,12 +45,15 @@
   ],
   "devDependencies": {
     "@babel/core": "^7.12.3",
+    "@putdotio/prettier-config": "^1.0.0",
     "@size-limit/preset-small-lib": "^4.7.0",
-    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-actions": "^6.1.1",
+    "@storybook/addon-essentials": "^6.1.1",
     "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.0.28",
-    "@storybook/addons": "^6.0.28",
-    "@storybook/react": "^6.0.28",
+    "@storybook/addon-links": "^6.1.1",
+    "@storybook/addons": "^6.1.1",
+    "@storybook/react": "^6.1.1",
+    "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react-hooks": "^3.4.2",
     "@types/chrome": "^0.0.126",
     "@types/chromecast-caf-sender": "^1.0.3",
@@ -67,6 +65,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
     "size-limit": "^4.7.0",
     "ts-jest": "^26.4.4",
     "tsdx": "^0.14.1",
@@ -76,6 +75,7 @@
   "dependencies": {
     "@rebass/forms": "^4.0.6",
     "@types/rebass": "^4.0.7",
+    "@types/rebass__forms": "^4.0.4",
     "capital-case": "^1.0.3",
     "es6-error": "^4.1.1",
     "react-icons": "^3.11.0",

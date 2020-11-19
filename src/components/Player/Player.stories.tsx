@@ -5,6 +5,7 @@ import Player, { Props } from './Player'
 import theme from '../../theme'
 import subtitles from '../../fixtures/textTracks'
 import subtitleStyles from '../../fixtures/textTrackStyle'
+import withMaxWidth from '../../utils/storybook-decorators/withMaxWidth'
 
 enum PlayerState {
   IDLE = 'IDLE',
@@ -25,13 +26,14 @@ const defaultProps: Props = {
   onMuteOrUnmute: action('onMuteOrUnMute'),
   onSeek: action('onSeek'),
   subtitles: [],
-  selectedSubtitleId: null,
+  selectedSubtitleId: 0,
   selectSubtitle: action('selectSubtitle'),
   subtitleStyles,
   setSubtitleStyle: action('setSubtitleStyle'),
 }
 
-storiesOf('chromecast/ui/Player', module)
+storiesOf('Player', module)
+  .addDecorator(withMaxWidth(640))
   .add('without subtitles', () => <Player {...defaultProps} />)
   .add('with subtitles, paused and muted', () => (
     <Player

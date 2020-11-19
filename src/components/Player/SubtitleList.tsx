@@ -45,7 +45,7 @@ const SubtitleList: React.FC<Props> = ({
             theme={theme.list.item}
           />
 
-          {subtitles.map((s) => (
+          {subtitles.map(s => (
             <SubtitleListItem
               key={s.trackId}
               subtitle={s}

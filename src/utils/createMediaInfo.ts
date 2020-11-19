@@ -2,8 +2,8 @@ const createMediaInfo = ({
   contentId,
   duration,
 }: {
-  contentId: string;
-  duration: number;
+  contentId: string
+  duration: number
 }): chrome.cast.media.MediaInfo => ({
   contentId,
   duration,
@@ -27,6 +27,6 @@ const createMediaInfo = ({
     customData: {},
   },
   customData: {},
-});
+})
 
-export default createMediaInfo;
+export default createMediaInfo

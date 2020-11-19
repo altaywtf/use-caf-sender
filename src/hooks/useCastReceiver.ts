@@ -1,11 +1,11 @@
 const useCastReceiver = () => {
-  const session = window.cast.framework.CastContext.getInstance().getCurrentSession();
+  const session = window.cast.framework.CastContext.getInstance().getCurrentSession()
 
   if (!session) {
-    return [new Error('No session'), null] as const;
+    return [new Error('No session'), null] as const
   }
 
-  return [null, session.getCastDevice()] as const;
-};
+  return [null, session.getCastDevice()] as const
+}
 
-export default useCastReceiver;
+export default useCastReceiver

@@ -1,5 +1,5 @@
-import { UnreachableCaseError } from './index';
+import { UnreachableCaseError } from './index'
 
 export default function assertNever(x: never): never {
-  throw new UnreachableCaseError(`Unexpected case: ${x}`);
+  throw new UnreachableCaseError(`Unexpected case: ${x}`)
 }

@@ -13,7 +13,7 @@ export type StyleConfig = {
 }
 
 const convertChromecastEnumToOptions = (input: Record<string, string>) =>
-  Object.values(input).map((v) => ({
+  Object.values(input).map(v => ({
     label: capitalCase(v),
     value: v,
   }))
@@ -62,7 +62,7 @@ const getSchema = (): StyleConfig[] => [
   {
     keyPath: 'fontScale',
     label: 'Font Size',
-    options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 4].map((v) => ({
+    options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 3, 4].map(v => ({
       label: `${v * 100}%`,
       value: v,
     })),

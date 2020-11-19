@@ -62,8 +62,8 @@ const theme = {
       },
     },
   },
-};
+}
 
-export type ChromecastPlayerTheme = typeof theme;
+export type ChromecastPlayerTheme = typeof theme
 
-export default theme;
+export default theme

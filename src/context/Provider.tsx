@@ -39,12 +39,12 @@ const CastProvider: React.FC = ({ children }) => {
 
       context.addEventListener(
         window.cast.framework.CastContextEventType.CAST_STATE_CHANGED,
-        (e) => setCastState(e.castState),
+        e => setCastState(e.castState),
       )
 
       context.addEventListener(
         window.cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
-        (e) => setSessionState(e.sessionState),
+        e => setSessionState(e.sessionState),
       )
     }
   }, [initialized])

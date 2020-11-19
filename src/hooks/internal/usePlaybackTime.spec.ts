@@ -4,7 +4,9 @@ import usePlaybackTime from './usePlaybackTime'
 describe('usePlaybackTime', () => {
   const { IDLE, PLAYING, PAUSED } = window.chrome.cast.media.PlayerState
 
-  beforeAll(jest.useFakeTimers)
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
 
   it('does not increment if the player is not playing', () => {
     const { result } = renderHook(() => usePlaybackTime(IDLE))
@@ -32,7 +34,7 @@ describe('usePlaybackTime', () => {
 
   it('handles player state changes', () => {
     const { result, rerender } = renderHook(
-      (playerState) => usePlaybackTime(playerState),
+      playerState => usePlaybackTime(playerState),
       { initialProps: PLAYING },
     )
 

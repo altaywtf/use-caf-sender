@@ -14,9 +14,7 @@ const PlayerPlaceholder: React.FC<Props> = ({ ratio }) => {
     // $(nodeRef.current).height(width * ratio)
   }, [nodeRef, ratio])
 
-  return (
-    <div className="video-player-placeholder" ref={nodeRef} />
-  )
+  return <div className="video-player-placeholder" ref={nodeRef} />
 }
 
 PlayerPlaceholder.propTypes = {
